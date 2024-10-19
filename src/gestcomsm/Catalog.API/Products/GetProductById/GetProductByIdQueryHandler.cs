@@ -7,7 +7,8 @@
         (IDocumentSession session, ILogger<GetProductByIdQueryHandler> logger)
         : IQueryHandler<GetProductByIdQuery, GetProductByIdResult>
     {
-        public async Task<GetProductByIdResult> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
+        public async Task<GetProductByIdResult> Handle(GetProductByIdQuery query,
+            CancellationToken cancellationToken)
         {
             logger.LogInformation("GetProductByIdQueryHandler.Handler called with {@Query}", query);
 
