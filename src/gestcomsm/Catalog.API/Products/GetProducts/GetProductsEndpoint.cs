@@ -1,5 +1,4 @@
-﻿
-namespace Catalog.API.Products.GetProducts
+﻿namespace Catalog.API.Products.GetProducts
 {
     //public record GetProductsRequest();
     public record GetProductsResponse(IEnumerable<Product> Products);
@@ -21,7 +20,6 @@ namespace Catalog.API.Products.GetProducts
             .ProducesProblem(StatusCodes.Status400BadRequest)
             .WithSummary("Get Products")
             .WithDescription("Get Products"); 
-              
         }
     }
 }
