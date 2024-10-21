@@ -9,7 +9,7 @@
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
-            logger.LogInformation("CreateProductHandler.Handle called with {@Command}", command);
+            logger.LogInformation("CreateProductCommandHandler.Handle called with {@Command}", command);
 
             //create Product entity from command object
             var product = new Product
