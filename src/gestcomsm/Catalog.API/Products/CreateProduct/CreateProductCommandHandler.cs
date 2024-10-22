@@ -15,8 +15,7 @@
         }
     }
 
-    internal class CreateProductCommandHandler(IDocumentSession session, 
-        IValidator<CreateProductCommand> validator, ILogger<CreateProductCommandHandler> logger) 
+    internal class CreateProductCommandHandler(IDocumentSession session, ILogger<CreateProductCommandHandler> logger) 
         : ICommandHandler<CreateProductCommand, CreateProductResult>
     {
         public async Task<CreateProductResult> Handle(CreateProductCommand command, CancellationToken cancellationToken)
@@ -25,12 +24,7 @@
 
             //create Product entity from command object
 
-            var result = await validator.ValidateAsync(command, cancellationToken);
-            var errors = result.Errors.Select(x => x.ErrorMessage).ToList();
-            if (errors.Any())
-            {
-                throw new ValidationException(errors.FirstOrDefault());
-            }
+            
 
             var product = new Product
             {
